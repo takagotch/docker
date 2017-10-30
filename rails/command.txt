@@ -1,0 +1,13 @@
+docker-compose run web rails new . --force --database=postgresql
+//First, Compose will build the image for the web service using the Dockerfile. Then it will run rails new inside a new container, using that image. Once it’s done, you should have generated a fresh app.
+sudo chown -R $USER:$USER .
+docker-compose build
+
+//config/database.yml
+docker-compose up
+docker-compose run web rake db:create
+//vmb at snapair in ~/sandbox/rails
+docker-compose run web rake db:create
+//http://localhost:3000
+
+//https://docs.docker.com/compose/rails/#restart-the-application
