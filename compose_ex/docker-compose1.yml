@@ -11,4 +11,4 @@ dbservers:
     - dataonly
   environment:
     MYSQL_ROOT_PASSWORD:
-    - password
+      - password
