@@ -1,0 +1,39 @@
+
+
+ls -a
+--- /*container-IMAGES-dockerhub*/
+docker images
+
+
+docker pull
+docker push
+docker rmi centosx
+
+docker tag centos:latest takagotch/centosx:1.0
+
+--- /*images-CONTAINER-process*/
+docker ps -a
+
+
+docker create
+docker commit centosx takagotch/centos:1.0
+docker rm 
+docker start apache nginx
+docker stop -t 2 xxxx
+
+
+docker run -it centosx /bin/bash
+docker run -d -p 8000:80 httpd
+
+--- /*container-PROCESS*/
+docker top nginx
+docker port nginx
+
+
+docker exec
+
+---
+docker version
+docker login
+docker logut
+
