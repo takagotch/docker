@@ -48,5 +48,6 @@ docker search
 docker version
 docker-compose version
 docker login
+systemctl start docker
 docker logut
 
