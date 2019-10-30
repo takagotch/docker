@@ -24,7 +24,7 @@ docker stop -t 2 xxxx
 
 docker run -td --name centos7 docker.io/centos:centos7
 docker run -td --name ubuntu-latest docker.io/ubuntu:latest
-docker run -d -p 8000:80 --name --name nginx-latest docker.io\nginx:latest
+docker run -d -p 8000:80 --name nginx-latest docker.io\nginx:latest
 docker run -d -p 8080:80 httpd
 **/
 
