@@ -11,6 +11,14 @@
 
 ## docker-swarm
 # todo-ingress.yml
+docker container exec -it manager docker node ls
+docker container exec -it manager \
+docker network create --driver=overlay --attachable todoapp
+
+git clone https://github.com/gihyodocker/tododb
+
+cd tododb
+
 
 
 docker image build -f Docker-nuxt -t ch/04/nginx-nuxt:latest .

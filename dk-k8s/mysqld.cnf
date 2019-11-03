@@ -1,0 +1,20 @@
+# tododb/etc/mysql/mysql.conf.d/mysqld.cnf
+
+[mysqld]
+character-set-server = utf8mb4
+collation-server =utf8bmb4_general_ci
+pid-file = //
+socker = /
+datadir = //
+#log-error = //
+## 
+##
+##
+symbolic-links=0
+relay-log=mysqld-relay-bin
+relay-log-index=mysqld-relay-bin
+
+log-bin=/var/log/mysql/mysql-bin.log
+
+server-id=2
+
