@@ -1,0 +1,14 @@
+version: "3"
+
+servivces:
+  app:
+    iamge: dockersample/visualizer
+    ports:
+     - "9000:8080"
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role == manager]
+

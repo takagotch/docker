@@ -6,7 +6,96 @@
 
 
 
+## 3 docker
 
+docker image build -t example/cronjob:latest .
+docker container run -d -rm -name cronjob example/cronjob:latest
+docker container exec -it cronjob tail -f /var/log/cron.log
+
+/*
+db.driverClass=${DB_DRIVER_CLASS:com.mysql.jdbc.Driver}
+db.jdbcUrl=${DB_JDBC_RUL}
+db.user=${DB_USER}
+db.password=${DB_PASSWORD}
+db.initialSize=${DB_INITIAL_SIZE:10}
+db.maxActive=${DB_MAX_ACTIVE:50}
+db.maIdle=${DB_MAX_IDLE:20}
+db.minIdle=${DB_MIN_IDLE:10}
+*/ 
+
+docker container run -v ${PWD}:/workspace gihyodocker/imagemagick:latest
+ls -l
+docker container run -d -p 8080:8080 -v ${PWD}/jenkins_home:/var/jenkins_home jenkins:latest
+
+docker image build -t example/mysql-data:latest .
+docker container run -d --name mysql-data example/mysql-data:latest
+docker container run -d --rm  --name mysql \
+	 -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" \
+	 -e "MYSQL_DATABASE=volume_test" \
+	 -e "MYSQL_USER=example" \
+	 -e "MYSQL_PASSWORD=example" \
+	 --volumes-from mysql-data \
+	 mysql:5.7
+
+docker container exec -it mysql mysql -u root -p volume_test
+CREATE TABLE user(
+  id int PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255)
+) engine=iNNOdb default charset=utf8mb4 COLLATE utf8mb4_unicode_ci;
+INSERT INTO user (name) VALUES ('gihyo'), ('docker'), ('Solomon Hykes');
+
+docker container stop mysql
+docker container run -d --rm --name mysql \
+	- e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" \
+	- e "MYSQL_DATABASE=volume_test" \
+	- e "MYSQL_USER=example" \
+	- e "MYSQL_PASSWORD=example" \
+	--volumes-from mysql-data \
+	mysql:5.7
+
+docker container exec -it mysql mysql -u root -p volume_test
+SELECT * FROM user;
+
+docker container run -v `${PWD}`:/tmp \
+--volumes-from mysql-data \
+busybox \
+tar cvzf /tmp/mysql-backup.tar.gz /var/lib/mysql
+
+
+docker-compose up -d
+docker container ls
+docker container exec -it manager docker swarm init
+docker container exec -it worker01 docker swarm join \
+--token SWMTKN-1-1xxx manager:2377
+docker container exec -it docker node ls
+
+
+docker image tag example/echo:latest localhost:5000/example/echo:latest
+docker image push localhost:5000/example/echo:latest
+docker container exec -it worker01 docker image pull registry:500/example/echo:latest
+docker container exec -it worker01 docker image ls
+docker container exec -it manager \
+docker service create --replicas 1 --publish 8000:8000 --name echo registry:5000/example/echo:latest
+
+docker container exec -it manager docker service ls
+docker container exec -it manager docker service scale echo=6
+docker container exec -it manager docker service ps echo | grep Running
+docker container exec -it manager docker service rm echo
+docker container exec -it manager docker service rm ls
+
+docker container exec -it manager docker network create --driver=overlay --attachable ch03
+docker container exec -it manager deploy -c /stack/ch03-webapi.yml echo
+docker container exec -it manager docker stack services echo
+
+docker container exec -it manager docker stack ps echo
+docker container exec -it manager docker stack deploy -c /stack/visualizer.yml visualizer
+docker container exec -it manager docker stack rm echo
+
+docker container exec -it manager docker stack deploy -c /stack/ch03-webapi.yml echo
+docker container exec -it manager docker stack deploy -c /stack/ch03-ingress.yml ingress
+
+docker container exec -it manager docker serice ls
+curl http://localhost:8000
 
 
 ## docker-swarm
