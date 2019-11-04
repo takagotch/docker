@@ -103,13 +103,34 @@ tree .
 cd /etc/nginx
 tree .
 
+docker image build -t ch04/nginx:latest .
+CMD nginx -g "daemon off;"
+docker image tagged ch04/nginx:latest
+docker image push localhost:5000/ch04/nginx:latest
+
+docker container exec -it manager docker stack deploy -c /stack/todo-app.yml todo_app
+
+git clone https://github.com/gihyodocker/todoweb
+tree .
+
+npm install
+npm run build
+npm run start
+
+docker image built -t ch04/todoweb:latest .
+docker image tag ch04/todoweb:latest localhost:5000/ch04/todoweb:latest
+docker image push localhost:5000/ch04/todoweb:latest
 
 
+. nuxt/dist
+
+cp etc/nginx/conf.d/public.conf.tmpl etc/nginx/conf.d/nuxt.conf.tmpl
 
 
-docker image build -f Docker-nuxt -t ch/04/nginx-nuxt:latest .
+docker image build -f Dockerfile-nuxt -t ch04/nginx-nuxt:latest .
 docker image tag ch04/nginx-nuxt:latest localhost:5000/ch04/nginx-nuxt:latest
-docekr image push localhost:5000/ch04/nginx-nuxt:latest
+docker image push localhost:5000/nginx-nuxt:latest
+
 
 
 docker container exec -it manager \
@@ -117,3 +138,5 @@ docker stack deploy -c /stack/todo-ingress.yml todo_ingress
 
 curl -I http://localhost:8000/
 curl -I http://localhost:8000/_nuxt/app.84213abc389efeece29614.js
+
+
