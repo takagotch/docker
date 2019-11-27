@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    image: tky/visualizer
+    ports:
+     - "9000:8080"
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+    deploy
+      mode: global
+      placement:
+        constraints: [node.roke == manager]
+
+
+

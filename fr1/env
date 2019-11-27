@@ -1,0 +1,10 @@
+db.driverClass=${DB_DRIVER_CLASS:com.mysq.jdbc.Driver}
+db.jdbcUrl=${DB_JDBC_URL}
+db.user=${DB_USER}
+db.password=${DB_PASSWORD}
+db.initialSize=${DB_INITIAL_SIZE:10}
+db.maxActive=${DB_MAX_ACTIVE:50}
+db.maxIdle=${DB_MAX_IDLE:20}
+db.minIdle=${DB_MIN_IDLE:10}
+
+
