@@ -58,12 +58,17 @@ $
 
 ```
 // docker create & docker run
-// docker run --name TAG, -it debian:latest
+// docker run --name TAG
+//            -it debian:latest
+//            -p 127.0.0.1:80:8080
+//            -p 80:80
+//            -p 127.0.0.1:3000
 $ docker run --name TAG -it takagotch/rails6
 docker run takagotch/rails6:latest
 docker run ubuntu:14.04
 
-$
+$ docker ps -a | grep TAG
+
 
 ```
 
