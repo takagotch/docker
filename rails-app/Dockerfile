@@ -5,7 +5,7 @@ RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 ADD . $APP_HOME
 
-RUN apt-get update \
+RUN sudo apt-get update \
     && apt-get install -y \
                         gcc \
                         g++ \
@@ -15,7 +15,6 @@ RUN apt-get update \
                         sqlite-dev \
                         yarn \
                         nodejs \
-    && apt-get update \                        
     && gem install bundler \
     && bundle install \
     && yarn install \
