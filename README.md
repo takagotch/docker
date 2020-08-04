@@ -137,8 +137,10 @@ docker pull ruby:latest
 docker images
 ```
 
-```
-
+```sh
+// docker rmi all
+dokcer ps -aq | xargs docker rm
+docker images -aq | xargs docker rmi
 ```
 
 ```
