@@ -17,7 +17,7 @@ RUN apt-get update \
                         yarn \
                         nodejs \
     && apt-get clean \
-    && apt-cache policy \
+    && Sudo apt-cache policy sqlite3 \
     && gem install bundler \
     && bundle install \
     && yarn install \
