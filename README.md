@@ -60,14 +60,42 @@ $
 
 ```
 
-
-```
-
-```
-
-
+###### Install Docker for linux centos
 ```sh
-// Install Docker-Compose
+// https://docs.docker.com/engine/install/centos/
+$ sudo yum install -y yum-utils
+$ sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum-config-manager --enable docker-ce-nightly
+sudo yum-config-manager --enable docker-ce-test
+sudo yum-config-manager --disable docker-ce-nightly
+
+$ sudo yum install docker-ce docker-ce-cli containerd.io
+$ sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
+<VERSION_STRING>: docker-ce-18.09.1
+sudo yum install /path/to/package.rpm
+
+$ sudo systemctl start docker
+$ sudo docker run hello-world
+
+
+
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+sudo yum remove docker-ce docker-ce-cli containerd.io
+sudo rm -rf /var/lib/docker
+
+```
+
+###### Install Docker-Compose for linux centos
+```sh
 // $ su -
 //   sudo yum update
 
