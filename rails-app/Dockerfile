@@ -8,6 +8,7 @@ ADD . $APP_HOME
 RUN apk update \
     && apk add --no-cache gcc g++ make sqlite-dev yarn nodejs \
     && gem install bundler \
+    && bundle init \
     && bundle install \
     && yarn install
 
