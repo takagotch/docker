@@ -10,9 +10,9 @@ RUN apt-get update \
                         gcc \
                         g++ \
                         make \
-                        sqlite-dev \
                         sqlite3 \
                         libsqlite3-dev \
+                        sqlite-dev \
                         yarn \
                         nodejs \
     && gem install bundler \
