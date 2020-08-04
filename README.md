@@ -81,9 +81,33 @@ docker-compose run rails6 -p 80:80
 ```sh
 
 
+$ docker built -t dev
+docker built -t test
+docker built -t production
+
+$ docker images dev
+
+$ docker run -it --name -p
+
+```
+
+###### docker-compose rails
 ```sh
+$ vi dockerfile
+$ vi docker-compose.yml
+$ docker-compose run web rails new . 
+docker-compose run web rails new . --force --database=postgresql
+$ ls -l
+$ sudo chown -R $USER:$USER .
+$ docker-compose build
+vi config/database.yml
+docker-compose up
+docker-compose run web rake db:create
+curl https://localhost:3000/
 
-
+docker-compose down
+rm -rf tmp/pid/server.pid
+docker-compose up
 ```
 
 ```sh
