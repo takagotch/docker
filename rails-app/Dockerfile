@@ -9,7 +9,7 @@ RUN apt-get update \
     && apt-get install -y gcc g++ make sqlite-dev sqlite3 libsqlite3-dev yarn nodejs \
     && gem install bundler \
     && bundle install \
-    && yarn install
+    && yarn install &&\
     rm -r /var/lib/apt/lists/* 
     
 
