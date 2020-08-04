@@ -22,8 +22,10 @@ RUN apt-get update \
     && gem install bundler \
     && bundle install \
     && yarn install \
-    && rm -r /var/lib/apt/lists/* 
-    
+    #
+    # docker build -t rails-app . --no-cache
+    # && rm -r /var/lib/apt/lists/* 
+    # && rm -r /var/cache/apk/*
 
 EXPOSE 3000
 CMD ["rails", "s", "-b", "0.0.0.0"]
