@@ -57,6 +57,25 @@ $
 
 
 ```
+// docker create & docker run
+// docker run --name TAG, -it debian:latest
+$ docker run --name TAG -it takagotch/rails6
+docker run takagotch/rails6:latest
+docker run ubuntu:14.04
+
+$
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
 
 ```
 
