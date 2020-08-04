@@ -6,6 +6,7 @@ WORKDIR $APP_HOME
 ADD . $APP_HOME
 
 RUN apt-get update \
+    && apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
     && apt-get install -y \
                         sudo \
                         gcc \
@@ -18,8 +19,6 @@ RUN apt-get update \
                         sqlite-dev \
                         yarn \
                         nodejs \
-    && apt-get clean \
-    && Sudo apt-cache policy sqlite3 \
     && gem install bundler \
     && bundle install \
     && yarn install \
