@@ -10,7 +10,6 @@ RUN apt-get update \
     && gem install bundler \
     && bundle install \
     && yarn install
-    && apt-get clean && \
     rm -r /var/lib/apt/lists/* 
     
 
