@@ -17,6 +17,7 @@ RUN apt-get update \
                         yarn \
                         nodejs \
     && apt-get clean \
+    && apt-cache policy \
     && gem install bundler \
     && bundle install \
     && yarn install \
