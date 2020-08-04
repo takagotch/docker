@@ -66,7 +66,29 @@ $
 ```
 
 
-```
+```sh
+// Install Docker-Compose
+// $ su -
+//   sudo yum update
 
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+$ docker-compose --version
+
+// Install Docker-Compose2
+$ pip install docker-compose
+sudo pip install docker-compose
+sudo curl -L --fail https://github.com/docker/compose/releases/download/1.26.2/run.sh -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose migrate-to-labels
+docker container rm -f -v myapp_web_1 myapp_db_1 ...
+sudo rm /usr/local/bin/docker-compose
+pip uninstall docker-compose
+
+// alpine
+sudo yum install py-pip, python-dev, libffi-dev, openssl-dev, gcc, libc-dev, make
 ```
 
