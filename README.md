@@ -24,7 +24,7 @@ https://github.com/takagotch/docker/blob/master/doc.txt
 ```sh
 ```
 
-```
+```sh
 $ docker login
 USERNAME
 PASSWARD
@@ -42,7 +42,7 @@ docker pull
 
 ```
 
-```
+```sh
 $ docker rmi IMAGEID
 docker rmi -f IMAGEID
 
@@ -56,7 +56,42 @@ $
 ```
 
 
+
+```sh
+
 ```
+
+```sh
+vi dockerfile
+$ docker build
+docker build -t takagotch/rails6:latest .
+
+docker images
+```
+
+###### docker-compose run | build,up,start,run,exec
+```sh
+// https://docs.docker.com/compose/reference/
+// https://docs.docker.com/compose/reference/overview/
+$ docker-compose run rails6 .
+docker-compose run rails6 -p 127.0.0.1:3000 .
+docker-compose run rails6 -p 80:80
+```
+
+```sh
+
+
+```sh
+
+
+```
+
+```sh
+
+```
+
+
+```sh
 // docker create & docker run
 // docker run --name TAG
 //            -it debian:latest
