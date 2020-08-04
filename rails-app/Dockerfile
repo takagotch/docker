@@ -5,8 +5,9 @@ RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 ADD . $APP_HOME
 
-RUN sudo apt-get update \
+RUN apt-get update \
     && apt-get install -y \
+                        sudo \
                         gcc \
                         g++ \
                         make \
