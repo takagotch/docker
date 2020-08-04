@@ -11,7 +11,6 @@ RUN apt-get update \
     && bundle install \
     && yarn install
     && apt-get clean && \
-    # docker build -t rails-app . --no-cache
     rm -r /var/lib/apt/lists/* 
     
 
