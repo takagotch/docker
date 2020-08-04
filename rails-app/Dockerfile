@@ -15,6 +15,7 @@ RUN apt-get update \
                         sqlite-dev \
                         yarn \
                         nodejs \
+    && apt-get update \                        
     && gem install bundler \
     && bundle install \
     && yarn install \
