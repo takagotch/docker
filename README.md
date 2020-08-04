@@ -131,8 +131,10 @@ $ docker ps -a | grep TAG
 
 ```
 
-```
-
+```sh
+docker login
+docker pull ruby:latest
+docker images
 ```
 
 ```
