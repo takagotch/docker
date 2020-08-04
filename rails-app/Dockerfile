@@ -10,6 +10,8 @@ RUN apt-get update \
                         sudo \
                         gcc \
                         g++ \
+                        ruby \
+                        ruby-dev \
                         make \
                         sqlite3 \
                         libsqlite3-dev \
