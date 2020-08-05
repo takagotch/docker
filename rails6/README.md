@@ -11,7 +11,7 @@
 # mkdir apptky && cd apptky
 
 
-docker-compose run web rails new . --force --no-deps --database=postgresql
+$ docker-compose run web rails new . --force --no-deps --database=postgresql --skip-bundle
 docker-compose build
 vi config/database.yml
 docker-compose run web rake db:create
