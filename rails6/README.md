@@ -44,4 +44,11 @@ test:
 
 ```
 
+######
+```
+docker-compose ps
+
+
+```
+
 
