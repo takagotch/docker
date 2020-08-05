@@ -91,7 +91,7 @@ gem 'rails', '6.0.3.2'
 ```
 
 ```Dockerfile
-FROM ruby:2.6.5-alpine
+FROM ruby:2.7.1-alpine
 
 ENV LANG="C.UTF-8" \
     PACKAGES="curl-dev build-base alpine-sdk tzdata sqlite-dev less ruby-dev nodejs"
