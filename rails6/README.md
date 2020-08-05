@@ -128,6 +128,7 @@ services:
 ```
 
 ```sh
+docker-compose build
 docker-compose run -rm app rails6 new -d sqlite3 -B --skip-webpack-install --skip-spring .
 docker-compose build
 docker-compose run --rm app rails db:create
