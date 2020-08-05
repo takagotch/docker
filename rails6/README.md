@@ -53,7 +53,9 @@ docker-compose stop
 docker-compose restart
 
 docker-compose down
-docker-compose down -rmi all
+docker-compose down --rmi all
+docker-compose rm 
+docker-compose rm -f
 docker-compose down -v
 docker volume rm pgdata
 ```
