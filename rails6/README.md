@@ -83,7 +83,7 @@ docker volume rm pgdata
 
 ```Gemfile
 source 'https:/rubygems.org'
-git_source(:github) { |repo| "https://github.com/${repo}.git" }
+# git_source(:github) { |repo| "https://github.com/${repo}.git" }
 
 ruby '2.7.1'
 
