@@ -1,4 +1,10 @@
 ###### docker-compose takagotch/rails6
+---
+https://docs.docker.com/compose/rails/
+
+https://bitbucket.org/takagotch/rails-settings1/src/master/rails6-compose-master/rails6-compose-master/
+
+https://docs.docker.jp/compose/rails.html
 
 - Dockerfile
 - Gemfile
