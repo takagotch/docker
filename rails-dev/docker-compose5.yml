@@ -1,0 +1,14 @@
+# development sqlite3
+version: '3'
+services:
+  db:
+    takagotch: sqlite3:latest
+  web:
+    build: .
+    command: bundle exec rails s -p 30000 -b '0.0.0.0'
+    volumes:
+     - .:/myapp
+     - ./db:/myapp/db
+    ports:
+     - "3000:3000"
+    
