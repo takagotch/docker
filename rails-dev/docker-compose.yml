@@ -3,7 +3,7 @@ version: '3.5'
 services:
   app:
     build: .
-    image: rails5
+    image: rails6
     ports:
       - 3000:3000
     working_dir: /usr/src/app
@@ -12,7 +12,7 @@ services:
       - rails5-usrlocal:/usr/local/
 
 volumes:
-  rails5-usrlocal:
+  rails6-usrlocal:
 
 networks:
   local:
