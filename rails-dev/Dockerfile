@@ -1,7 +1,7 @@
 FROM ruby:2.7.1-alpine
 
 RUN apk add --no-cache bash
-RUN apk add --update \
+RUN apk add --update && apk\
   build-base \
   ruby-nokogiri \
   nodejs \
