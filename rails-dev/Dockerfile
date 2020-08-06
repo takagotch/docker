@@ -26,3 +26,4 @@ RUN chmod +x /etc/entrypoint.sh
 CMD ["/bin/sh"]
 ENTRYPOINT ["/etc/entrypoint.sh"]
 
+CMD ["rails", "server", "-b", "0.0.0.0"]
