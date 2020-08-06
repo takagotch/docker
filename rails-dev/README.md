@@ -32,6 +32,9 @@ bunele install
 ```
 
 ```sh
+docker-compose build
+docker-compose run web rails new . --force --database sqlite3
+docker-compose run web rails new . --force --database postgresql
 
 ```
 
