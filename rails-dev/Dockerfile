@@ -13,9 +13,13 @@ RUN apk add --update \
 
 EXPOSE 3000
 
+RUN mkdir /myapp
 WORKDIR /usr/src/app
 
-RUN gem install rails
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
+RUN bundle install
+COPY . /myapp
 
 COPY ./entrypoint.sh /etc/entrypoint.sh
 RUN chmod +x /etc/entrypoint.sh
