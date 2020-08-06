@@ -6,14 +6,41 @@ services:
     image: rails6
     ports:
       - 3000:3000
+    # mysql
+    #
+#   environment:
+#     - APP_DB_HOST=database-host
+#     - APP_DB_DATABASE="${MYSQL_DATABASE_NAME}"
+#     - APP_DB_USERNAME=root
+#     - APP_DB_PASSWORD="${MYSQL_USERNAME_PASSWORD}"
+#   
+#   
     working_dir: /usr/src/app
+    # mysql
+#   links:
+#     - database:database-host
     volumes:
       - '.:/usr/src/app'
-      - rails5-usrlocal:/usr/local/
+      - rails6-usrlocal:/usr/local/
+    # mysql
+#   networks:
+#     - local
+# database:
+#   container_name: rails6-mysql
+#   image: mysql:5.7
+#   ports: 
+#     - "3306:3306"
+#   volumes:
+#     - ./mysql.cnf:/etc/mysql/my.cnf
+#     - mysql-data:/var/lib/mysql
+#   networks:
+#     - local
 
 volumes:
   rails6-usrlocal:
-
+  # mysql
+# mysql-data:
+#
 networks:
   local:
   
